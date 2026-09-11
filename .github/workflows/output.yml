@@ -1,0 +1,11 @@
+name: output demo
+on: push
+jobs:
+   jobs1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: first step
+          id: step1 
+          run: echo "version==0.0.1" >> $GITHUB_OUTPUT
+        - name: step2
+          run: echo "this version is ${{steps.step1.outputs.version}}"
